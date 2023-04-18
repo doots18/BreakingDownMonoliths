@@ -1,0 +1,77 @@
+version: '3.3'
+services:
+  landing-service:
+    build: ./landing 
+    hostname: landing-service
+    ports:
+      - 8080:8080
+    networks:
+      sample:
+        aliases:
+          - landing-service
+  addition-service:
+    build: ./addition
+    hostname: addition-service
+    ports:
+      - 5051:5051
+    networks:
+      sample:
+        aliases:
+          - addition-service
+  subtraction-service:
+    build: ./subtraction
+    hostname: subtraction-service
+    ports:
+      - 5052:5052
+    networks:
+      sample:
+        aliases:
+          - subtraction-service
+  multiplication-service:
+    build: ./multiplication
+    hostname: multiplication-service
+    ports:
+      - 5053:5053
+    networks:
+      sample:
+        aliases:
+          - multiplication-service
+  division-service:
+    build: ./division
+    hostname: division-service
+    ports:
+      - 5054:5054
+    networks:
+      sample:
+        aliases:
+          - division-service
+  gcd-service:
+    build: ./gcd
+    hostname: gcd-service
+    ports:
+      - 5063:5063
+    networks:
+      sample:
+        aliases:
+          - gcd-service
+  lcm-service:
+    build: ./lcm
+    hostname: lcm-service
+    ports:
+       - 5061:5061
+    networks:
+      sample:
+        aliases:
+          - lcm-service               
+  
+  modulus-service:
+    build: ./modulus
+    hostname: modulus-service
+    ports:
+          - 5062:5062
+    networks:
+      sample:
+        aliases:
+          - modulus-service        
+networks:
+  sample:
